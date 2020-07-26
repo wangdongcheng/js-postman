@@ -1,0 +1,40 @@
+{
+  "option_token": {
+    "method": "GET",
+    "url": "https://ckg-910.wdf.sap.corp/sap/opu/odata/sap/API_MANUALACCRUALS/$metadata",
+    "headers": {
+      "Authorization": "Basic V0FOR0RPTkczOldhbmd3ZGMw",
+      "x-csrf-token": "Fetch"
+    }
+  },
+  "body_crt": "{\"CompanyCode\":\"0001\",\"ManualAccrualsAccrObjectType\":\"0RENTING\",\"ManualAccrualsAccrObject\":\"CASE_S1_C1-1-001_0002\",\"AccrualObjectDescription\":\"CASE_S1_C1-1_LN_OK\",\"PersonResponsible\":\"WANGDONG3\",\"to_Assgmt\":{\"results\":[{\"AccrAcctAssgmtValdtyEndDte\":\"2020-09-30T00:00:00\",\"BusinessArea\":\"0001\",\"CostCenter\":\"0NFF3VIAF7\",\"ProfitCenter\":\"1000\",\"WBSElementInternalID\":\"594\",\"SalesOrder\":\"89\",\"SalesOrderItem\":\"10\"}]},\"to_Item\":{\"results\":[{\"AccrualItemType\":\"ACT_COST\",\"Ledger\":\"0L\",\"AccrualMethod\":\"LINEAR\",\"AccrSubobjHdrStartOfLifeDate\":\"2020-01-31T00:00:00\",\"AccrSubobjHdrEndOfLifeDate\":\"2020-09-30T00:00:00\",\"TotalAccrAmountInTransCrcy\":\"1200\",\"TransactionCurrency\":\"EUR\",\"TotalAccrualQuantityUnit\":\"bbl\"},{\"AccrualItemType\":\"ACCRL_STD\",\"Ledger\":\"0L\",\"AccrualMethod\":\"LINEAR\",\"AccrSubobjHdrStartOfLifeDate\":\"2020-01-31T00:00:00\",\"AccrSubobjHdrEndOfLifeDate\":\"2020-09-30T00:00:00\",\"TotalAccrAmountInTransCrcy\":\"2000\",\"TransactionCurrency\":\"EUR\"},{\"AccrualItemType\":\"ACTCST\",\"Ledger\":\"0L\",\"AccrualMethod\":\"ACT_COSTS\",\"AccrSubobjHdrStartOfLifeDate\":\"2020-01-31T00:00:00\",\"AccrSubobjHdrEndOfLifeDate\":\"2020-09-30T00:00:00\",\"TotalAccrAmountInTransCrcy\":\"0.00\",\"TransactionCurrency\":\"EUR\"}]},\"to_Param\":{\"results\":[{\"AccrSubobjParamValdtyEndDte\":\"2020-09-30T00:00:00\",\"AccrualSubobjectParameter\":\"EXAMPLE\",\"AccrualSubobjectParameterValue\":\"VALUE1\"}]}}",
+  "batch_hdr": "--batch_5fd2-2e8b-7d58\r\n\r\nContent-Type: multipart/mixed; boundary=changeset_57c1-6e62-8221\r\n\r\n\r\n",
+  "changeset_hdr": "--changeset_57c1-6e62-8221\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST MnlAccrsAccrualSubobject HTTP/1.1\r\nsap-contextid-accept: header\r\nAccept: application/json\r\nAccept-Language: en\r\nDataServiceVersion: 2.0\r\nMaxDataServiceVersion: 2.0\r\nContent-Type: application/json\r\n\r\n",
+  "rooter": "--changeset_57c1-6e62-8221--\r\n\r\n--batch_5fd2-2e8b-7d58--\r\n",
+  "option_crt_sgl": {
+    "method": "POST",
+    "url": "https://ckg-910.wdf.sap.corp/sap/opu/odata/sap/API_MANUALACCRUALS/MnlAccrsAccrualSubobject",
+    "headers": {
+      "x-csrf-token": "p06WhffgLg6l2dzZljr7-g==",
+      "Authorization": "Basic V0FOR0RPTkczOldhbmd3ZGMw",
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Cookie": "sap-usercontext=sap-client=910; MYSAPSSO2=MYSAPSSO2=AjQxMDMBABhXAEEATgBHAEQATwBOAEcAMwAgACAAIAACAAY5ADEAMAADABBDAEsARwAgACAAIAAgACAABAAYMgAwADIAMAAwADcAMgA2ADAAOAAzADcABQAEAAAACAYAAlgACQACRQD%2fAQswggEHBgkqhkiG9w0BBwKggfkwgfYCAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGB1jCB0wIBATAoMBwxDDAKBgNVBAsTA0RMTTEMMAoGA1UEAxMDQ0tHAggKICAEAhEjATAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjAwNzI2MDgzNzU1WjAjBgkqhkiG9w0BCQQxFgQU25qph7w9FsOwfGFjNrlE9XOmEAMwCQYHKoZIzjgEAwQvMC0CFGT%21foDbBsisu0iuCwgNRTPPFDjnAhUAk3Eb9iy47OX3eeD9QIJkVPRA95g%3d;SAP_SESSIONID_CKG_910=vyWJhquxSZZ-g5TYNpVrTE1zLN3PGxHqhd_6Fj5VR88%3d;"
+    },
+    "body": ""
+  },
+  "option_crt_batch": {
+    "method": "POST",
+    "url": "https://ckg-910.wdf.sap.corp/sap/opu/odata/sap/API_MANUALACCRUALS/$batch",
+    "headers": {
+      "x-csrf-token": "p06WhffgLg6l2dzZljr7-g==",
+      "Authorization": "Basic V0FOR0RPTkczOldhbmd3ZGMw",
+      "Accept": "application/json",
+      "Content-Type": "multipart/mixed;boundary=batch_5fd2-2e8b-7d58",
+      "Cookie": "sap-usercontext=sap-client=910; path=/; MYSAPSSO2=MYSAPSSO2=AjQxMDMBABhXAEEATgBHAEQATwBOAEcAMwAgACAAIAACAAY5ADEAMAADABBDAEsARwAgACAAIAAgACAABAAYMgAwADIAMAAwADcAMgA2ADAAOAAzADcABQAEAAAACAYAAlgACQACRQD%2fAQswggEHBgkqhkiG9w0BBwKggfkwgfYCAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGB1jCB0wIBATAoMBwxDDAKBgNVBAsTA0RMTTEMMAoGA1UEAxMDQ0tHAggKICAEAhEjATAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjAwNzI2MDgzNzU1WjAjBgkqhkiG9w0BCQQxFgQU25qph7w9FsOwfGFjNrlE9XOmEAMwCQYHKoZIzjgEAwQvMC0CFGT%21foDbBsisu0iuCwgNRTPPFDjnAhUAk3Eb9iy47OX3eeD9QIJkVPRA95g%3d; path=/; domain=.wdf.sap.corp; secure; HttpOnly; SAP_SESSIONID_CKG_910=vyWJhquxSZZ-g5TYNpVrTE1zLN3PGxHqhd_6Fj5VR88%3d; path=/; secure; HttpOnly"
+    },
+    "body": ""
+  },
+  "csrf_new": "O6V1rtsB4VyXC51tBt9kHw==",
+  "cookie_new": "sap-usercontext=sap-client=910; path=/;MYSAPSSO2=AjQxMDMBABhXAEEATgBHAEQATwBOAEcAMwAgACAAIAACAAY5ADEAMAADABBDAEsARwAgACAAIAAgACAABAAYMgAwADIAMAAwADcAMgA2ADEANgAxADQABQAEAAAACAYAAlgACQACRQD%2fAQswggEHBgkqhkiG9w0BBwKggfkwgfYCAQExCzAJBgUrDgMCGgUAMAsGCSqGSIb3DQEHATGB1jCB0wIBATAoMBwxDDAKBgNVBAsTA0RMTTEMMAoGA1UEAxMDQ0tHAggKICAEAhEjATAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjAwNzI2MTYxNDQyWjAjBgkqhkiG9w0BCQQxFgQU%21UWeppI04%21E2iX%2fjMLIauz58%2fkowCQYHKoZIzjgEAwQvMC0CFQCvceiE1xyVpWYJca2qgY7nRQvptgIUGlAcPlpcU%21i9RrRWrR5d%210YzN08%3d; path=/; domain=.wdf.sap.corp; secure; HttpOnly;SAP_SESSIONID_CKG_910=styoa3qQ16vCPJw4dXZFjh0051HPWxHqo9j6Fj5VR88%3d; path=/; secure; HttpOnly;"
+}
