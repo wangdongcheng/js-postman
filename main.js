@@ -12,7 +12,17 @@ if (opt.headers.Cookie !== options.cookie_new) {
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
-request(opt, (error, response) => {
-    if (error) throw new Error(error);
-    console.log(`New accrual obj: ${JSON.parse(response.body).d.AccrualObject}`);
-});
+let result = [];
+for (let i = 0; i < 5; ++i) {
+    const start = Date.now();
+    request(opt, (error, response) => {
+        if (error) throw new Error(error);
+        const end = Date.now();
+        result.push(end - start);
+        console.log(`New accrual obj: ${JSON.parse(response.body).d.AccrualObject}`);
+    });
+}
+
+setTimeout(() => {
+    console.log(result);
+}, 10000);

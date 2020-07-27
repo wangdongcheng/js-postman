@@ -18,9 +18,7 @@ const upd_token = response => {
     console.log(`New cookie: ${options.cookie_new}`);
 }
 
-
 request(opt_token, (error, response) => {
     if (error) throw new Error(error);
     upd_token(response);
 });
-
