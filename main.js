@@ -12,17 +12,26 @@ if (opt.headers.Cookie !== options.cookie_new) {
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
-let result = [];
-for (let i = 0; i < 5; ++i) {
-    const start = Date.now();
-    request(opt, (error, response) => {
-        if (error) throw new Error(error);
-        const end = Date.now();
-        result.push(end - start);
-        console.log(`New accrual obj: ${JSON.parse(response.body).d.AccrualObject}`);
-    });
+const start = Date.now();
+let count = 0;
+const req = option => {
+    // let start = Date.now();
+    return new Promise(resolve => {
+        request(option, (error, response) => {
+            if (error) throw new Error(error);
+            if (response.statusCode === 200 || response.statusCode === 201 || response.statusCode === 202) {
+                count++;
+                console.log(`No. ${count} New accrual obj: ${JSON.parse(response.body).d.AccrualObject}`, Date.now() - start);
+                resolve();
+            }
+        });
+    })
 }
 
-setTimeout(() => {
-    console.log(result);
-}, 10000);
+for (let i = 0; i < 300; ++i) {
+    req(opt)
+        .then(req(opt))
+        .then(req(opt))
+        .then(req(opt))
+        .then(req(opt));
+}

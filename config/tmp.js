@@ -1,7 +1,8 @@
-let rec = [];
-for (let i = 0; i < 100000; ++i) {
-    if (!rec.length || Date.now() != rec[rec.length - 1]) {
-        rec.push(Date.now());
-    }
+function makeFunc() {
+    var name = "Mozilla";
+    function displayName() {
+        console.log(name);
+    } return displayName;
 }
-console.log(rec);
+var myFunc = makeFunc();
+myFunc();   //输出Mozilla
